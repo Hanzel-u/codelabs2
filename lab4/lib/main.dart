@@ -36,7 +36,7 @@ class Menu extends StatelessWidget {
           child: Column(
             children: [
               // Modify code here
-              Example2(),
+              Example3(),
             ],
           ),
         ),
@@ -85,34 +85,37 @@ class Example2 extends StatelessWidget {
 }
 
 // Problem 3: Invisible VerticalDivider
-// class Example3 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//       children: [
-//         RaisedButton(
-//           onPressed: () {
-//             print('Pickup button pressed.');
-//           },
-//           child: Text(
-//             'Pickup',
-//           ),
-//         ),
-//         // This widget is not shown on screen initially.
-//         VerticalDivider(
-//           width: 20.0,
-//           thickness: 5.0,
-//         ),
-//         RaisedButton(
-//           onPressed: () {
-//             print('Delivery button pressed.');
-//           },
-//           child: Text(
-//             'Delivery',
-//           ),
-//         )
-//       ],
-//     );
-//   }
-// }
+class Example3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              print('Pickup button pressed.');
+            },
+            child: Text(
+              'Pickup',
+            ),
+          ),
+          // This widget is not shown on screen initially.
+          VerticalDivider(
+            width: 20.0,
+            thickness: 5.0,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print('Delivery button pressed.');
+            },
+            child: Text(
+              'Delivery',
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
